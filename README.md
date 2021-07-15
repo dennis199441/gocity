@@ -112,7 +112,7 @@ The following picture shows the high level system architecture. Product manageme
 
 ![Alt text](doc/gocity-architecture-diagram.png "Architecture Diagram")
 
-In our scenario, we have to types of data, `category` and `product`. Since each `product` must have a `category`, there is a **one-to-many relationship between `product` and `category`. Because of this relationship, I decided to use a relational database, MySQL, as our data persistence layer. The following picture is the entity-relationship diagram for our database.
+In our scenario, we have to types of data, `category` and `product`. Since each `product` must have a `category`, there is a **one-to-many relationship** between `product` and `category`. Because of this relationship, I decided to use a relational database, MySQL, as our data persistence layer. The following picture is the entity-relationship diagram for our database.
 
 ![Alt text](doc/gocity-er-diagram.png "ER Diagram")
 
