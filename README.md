@@ -91,7 +91,9 @@ The following shows the structure of this folder. There are 3 subfolders:
 <br>
 
 ## How to Run <a name="how-to-run"></a>
-Make sure Docker and Docker Compose are installed on your machine. 
+### Please make sure the followings before run the application:
+1. Docker and Docker Compose are installed on your machine.
+2. Port 3000, 3306 and 8080 are available on your machine.
 
 ### Start the database
 1. `cd backend/gocity-database`
