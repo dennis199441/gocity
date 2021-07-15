@@ -21,9 +21,10 @@ Backend: `http://127.0.0.1:8080/<endpoint>`
 6. [System Architecture and Data Model](#system-architecture)
 7. [Frontend Portal File Structure](#frontend-portal)
 8. [Backend Service File Structure](#backend-service)
-9. [Category API](#category-api)
-10. [Product API](#product-api)
-11. [Future Development](#future-development)
+9. [Logging](#logging)
+10. [Category API](#category-api)
+11. [Product API](#product-api)
+12. [Future Development](#future-development)
 
 <br>
 
@@ -247,6 +248,12 @@ src
                     ├── repository
                     └── service
 ```
+
+<br>
+
+## Logging <a name="logging"></a>
+I used SLF4J for logging. The log is store under `~/datadrive/gocity/backend/log`. The path can be updated by modifying the docker-compose file inside `backend/gocity`.
+
 
 <br>
 
