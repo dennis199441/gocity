@@ -4,22 +4,23 @@ This is a simple product management application. This project contains everythin
 2. `backend/gocity`: Spring Boot application which contains two sets of REST API, **Product API** and **Category API**.
 3. `backend/gocity-database`: MySQL Database configuration
 
----
+<br>
 
 ## Table of Contents
-1. [Technologies Used](#technologies)
-2. [Folder Structure](#folder)
+1. [Technologies Used](#technologies-used)
+2. [Folder Structure](#this-folder)
 3. [User Interface](#ui)
-4. [System Architecture and Data Model ](#system)
-5. [Frontend Portal File Structure](#frontend)
-6. [Backend Service File Structure](#backend)
-7. [Category API](#category)
-8. [Product API](#product)
-9. [How to Run](#how)
-10. [Future Development](#future)
----
+4. [System Architecture and Data Model](#system-architecture)
+5. [Frontend Portal File Structure](#frontend-portal)
+6. [Backend Service File Structure](#backend-service)
+7. [Category API](#category-api)
+8. [Product API](#product-api)
+9. [How to Run](#how-to-run)
+10. [Future Development](#future-development)
 
-## Technologies Used <a name="technologies"></a>
+<br>
+
+## Technologies Used <a name="technologies-used"></a>
 
 ### Backend
 1. Java 11
@@ -37,9 +38,9 @@ This is a simple product management application. This project contains everythin
 1. Docker
 2. Docker Compose
 
----
+<br>
 
-## Folder structure <a name="folder"></a>
+## Folder structure <a name="this-folder"></a>
 
 The following shows the structure of this folder. There are 3 subfolders:
 1. backend
@@ -71,7 +72,8 @@ The following shows the structure of this folder. There are 3 subfolders:
     └── gocity-product-management
 ```
 
----
+<br>
+
 ## User Interface <a name="ui"></a>
 
 The following shows the user interface for this application.
@@ -103,9 +105,9 @@ The following shows the user interface for this application.
 
 ![Alt text](doc/create-product.png "Create Product")
 
----
+<br>
 
-## System Architecture and Data Model <a name="system"></a>
+## System Architecture and Data Model <a name="system-architecture"></a>
 The following picture shows the high level system architecture. Product management service (this service) manage the product data and product categories. Product management service exposes the `Product API` and `Category API` to the frontend portals. Data is stored in a MySQL database.
 
 ![Alt text](doc/gocity-architecture-diagram.png "Architecture Diagram")
@@ -116,9 +118,9 @@ In our scenario, we have to types of data, `category` and `product`. Since each 
 
 Each table has a `id`, which is the primary key. The `product` table has a foreign key (**FK1** in the picture) on column `category_id`, which is referencing the `id` in table `category`.
 
----
+<br>
 
-## Frontend Portal File Structure <a name="frontend"></a>
+## Frontend Portal File Structure <a name="frontend-portal"></a>
 
 The fronend portal is built using React. The following shows the file structure of the application. All the React source code is stored under the `src/main` folder. In most applications, authentication is required in order to gain access to the service(s). Therefore, I organize the source code as follows:
 
@@ -166,9 +168,9 @@ The fronend portal is built using React. The following shows the file structure 
 └── yarn.lock
 ```
 
----
+<br>
 
-## Backend Service File Structure  <a name="backend"></a>
+## Backend Service File Structure  <a name="backend-service"></a>
 
 The following tree shows the file structure under the `src` folder. There are 5 packages `com.dennis.gocity`
 
@@ -208,9 +210,9 @@ src
                     └── service
 ```
 
----
+<br>
 
-## Category API <a name="category"></a>
+## Category API <a name="category-api"></a>
 
 ### **Get all categories**
 Returns a list of category objects in JSON format.
@@ -234,14 +236,22 @@ Returns a list of category objects in JSON format.
 * **Success Response:**
 
   * **Code:** 200 <br />
-    **Content:** `[{ "id" : 1, categoryName : "Example Category" }]`
+    **Content:** 
+    ```json
+    [
+        { 
+            "id" : 1, 
+            "categoryName" : "Example Category" 
+        }
+    ]
+    ```
  
 * **Error Response:**
 
   * **Code:** 500 INTERNAL SERVER ERROR <br />
     **Content:** `null`
 
----
+
 
 ### **Get category by ID**
 Returns a category object in JSON format.
@@ -267,14 +277,20 @@ Returns a category object in JSON format.
 * **Success Response:**
 
   * **Code:** 200 <br />
-    **Content:** `{ "id" : 1, categoryName : "Example Category" }`
+    **Content:** 
+    ```json
+    { 
+        "id" : 1, 
+        "categoryName" : "Example Category" 
+    }`
+    ```
  
 * **Error Response:**
 
   * **Code:** 500 INTERNAL SERVER ERROR <br />
     **Content:** `null`
 
----
+
 
 ### **Create category**
 Insert a category entry in the database and returns a category object in JSON format. `id` is generated automatically during the insert operation.
@@ -302,14 +318,20 @@ Insert a category entry in the database and returns a category object in JSON fo
 * **Success Response:**
 
   * **Code:** 200 <br />
-    **Content:** `{ "id" : 1, categoryName : "Example Category" }`
+    **Content:** 
+    ```json
+    { 
+        "id" : 1, 
+        "categoryName" : "Example Category" 
+    }
+    ```
  
 * **Error Response:**
 
   * **Code:** 500 INTERNAL SERVER ERROR <br />
     **Content:** `null`
 
----
+
 
 ### **Update category**
 Update a category entry in the database and returns a category object in JSON format.
@@ -341,14 +363,20 @@ Update a category entry in the database and returns a category object in JSON fo
 * **Success Response:**
 
   * **Code:** 200 <br />
-    **Content:** `{ "id" : 1, categoryName : "Example Category Updated" }`
+    **Content:** 
+    ```json
+    {
+        "id" : 1, 
+        "categoryName" : "Example Category Updated" 
+    }
+    ```
  
 * **Error Response:**
 
   * **Code:** 500 INTERNAL SERVER ERROR <br />
     **Content:** `null`
 
----
+
 
 ### **Delete category**
 Delete a category entry in the database and returns the `id` of the deleted entry as an integer.
@@ -384,8 +412,9 @@ Delete a category entry in the database and returns the `id` of the deleted entr
 
 <br>
 
-## Product API <a name="product"></a>
----
+## Product API <a name="product-api"></a>
+
+
 ### **Get all products**
 Returns a list of product objects in JSON format.
 
@@ -431,7 +460,7 @@ Returns a list of product objects in JSON format.
   * **Code:** 500 INTERNAL SERVER ERROR <br />
     **Content:** `null`
 
----
+
 
 ### **Get product by ID**
 Returns a product object in JSON format.
@@ -479,7 +508,7 @@ Returns a product object in JSON format.
     **Content:** `null`
 
 
----
+
 
 ### **Purchase product**
 Returns a product object in JSON format.
@@ -490,7 +519,7 @@ Returns a product object in JSON format.
 
 * **Method:**
 
-  `GET`
+  `POST`
   
 *  **URL Params**
 
@@ -500,7 +529,20 @@ Returns a product object in JSON format.
 
 * **Data Params**
 
-    None
+    ```json
+    {
+        "id": 1,
+        "name": "Knife Set",
+        "description": "A set of knives in all shapes and sizes.",
+        "category": {
+            "id": 1,
+            "categoryName": "Kitchen"
+        },
+        "creationDate": "2020-09-20T00:01:00.000+00:00",
+        "updateDate": "2020-09-20T00:01:00.000+00:00",
+        "lastPurchasedDate": "2020-10-24T00:01:00.000+00:00"
+    }
+    ```
 
 * **Success Response:**
 
@@ -526,7 +568,7 @@ Returns a product object in JSON format.
   * **Code:** 500 INTERNAL SERVER ERROR <br />
     **Content:** `null`
 
----
+
 
 ### **Create product**
 Insert a product entry in the database and returns a product object in JSON format. `id` is generated automatically during the insert operation.
@@ -580,7 +622,7 @@ Insert a product entry in the database and returns a product object in JSON form
   * **Code:** 500 INTERNAL SERVER ERROR <br />
     **Content:** `null`
 
----
+
 
 ### **Update product**
 Update a product entry in the database and returns a product object in JSON format.
@@ -629,7 +671,7 @@ Update a product entry in the database and returns a product object in JSON form
         },
         "creationDate": "2021-07-13T16:41:15.388+00:00",
         "updateDate": "2021-07-13T16:41:15.388+00:00",
-        "lastPurchasedDate": null
+        "lastPurchasedDate": "2021-07-13T16:41:15.388+00:00"
     }
     ```
  
@@ -638,7 +680,7 @@ Update a product entry in the database and returns a product object in JSON form
   * **Code:** 500 INTERNAL SERVER ERROR <br />
     **Content:** `null`
 
----
+
 
 ### **Delete product**
 Delete a product entry in the database and returns the `id` of the deleted entry as an integer.
@@ -672,9 +714,9 @@ Delete a product entry in the database and returns the `id` of the deleted entry
   * **Code:** 500 INTERNAL SERVER ERROR <br />
     **Content:** `null`
 
----
+<br>
 
-## How to Run <a name="how"></a>
+## How to Run <a name="how-to-run"></a>
 Make sure Docker and Docker Compose are installed on your machine. 
 
 ### Start the database
@@ -692,9 +734,9 @@ Make sure Docker and Docker Compose are installed on your machine.
 2. `docker-compose -f docker-compose-prod.yml build && docker-compose -f docker-compose-prod.yml up -d`
 3. (Stop) `docker-compose-prod.yml up -d`
 
----
+<br>
 
-## Future Development
+## Future Development <a name="future-development"></a>
 1. (Backend) Implement authentication layer using `Spring Security`
 2. (UI Improvement) Transform the existing landing page into a login page
 3. (UI Improvement) Support category management
