@@ -1,0 +1,18 @@
+version: "3.4"
+
+networks:
+  default:
+    external: true
+    name: gocity-database_gocity
+    
+services:
+
+  app:
+    build:
+      dockerfile: ./Dockerfile
+      context: ./
+      network: host
+    image: gocity-product-management:latest
+    restart: always
+    ports:
+      - 3000:3000

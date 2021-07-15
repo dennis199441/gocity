@@ -1,0 +1,22 @@
+version: "3.1"
+
+networks:
+  gocity:
+
+services:
+
+  db:
+    image: mysql:5.7
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - ~/datadrive/gocity/backend/mysql/data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: gocity-online-assessment-dennis
+      MYSQL_USER: dennis
+      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: gocity
+    networks:
+        - gocity
+    ports:
+      - 3306:3306

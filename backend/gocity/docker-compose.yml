@@ -1,0 +1,21 @@
+version: "3.4"
+
+networks:
+  default:
+    external: true
+    name: gocity-database_gocity
+    
+services:
+
+  app:
+    build:
+      dockerfile: ./Dockerfile
+      context: ./
+      network: host
+    image: gocity-assesment-dennis:latest
+    restart: always
+    volumes:
+      - ~/datadrive/gocity/backend/data/app:/tmp
+      - ~/datadrive/gocity/backend/log:/log
+    ports:
+      - 8080:8080
