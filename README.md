@@ -4,19 +4,35 @@ This is a simple product management application. This project contains everythin
 2. `backend/gocity`: Spring Boot application which contains two sets of REST API, **Product API** and **Category API**.
 3. `backend/gocity-database`: MySQL Database configuration
 
+I use Docker to run all the components, including the frontend portal, check out [How to Run](#how-to-run) for more details. After spinning up all the containers, you can access the applicaiton via:
+
+Frontend: `http://127.0.0.1:3000`
+
+Backend: `http://127.0.0.1:8080/<endpoint>`
+
 <br>
 
 ## Table of Contents
-1. [Technologies Used](#technologies-used)
-2. [Folder Structure](#this-folder)
-3. [User Interface](#ui)
-4. [System Architecture and Data Model](#system-architecture)
-5. [Frontend Portal File Structure](#frontend-portal)
-6. [Backend Service File Structure](#backend-service)
-7. [Category API](#category-api)
-8. [Product API](#product-api)
-9. [How to Run](#how-to-run)
-10. [Future Development](#future-development)
+1. [Development Environment](#dev-env)
+2. [Technologies Used](#technologies-used)
+3. [Folder Structure](#this-folder)
+4. [How to Run](#how-to-run)
+5. [User Interface](#ui)
+6. [System Architecture and Data Model](#system-architecture)
+7. [Frontend Portal File Structure](#frontend-portal)
+8. [Backend Service File Structure](#backend-service)
+9. [Category API](#category-api)
+10. [Product API](#product-api)
+11. [Future Development](#future-development)
+
+<br>
+
+## Development Environment <a name="dev-env"></a>
+I use the following tools for the development.
+
+IDE: Visual Studio Code
+
+OS: macOS Big Sur v11.1
 
 <br>
 
@@ -71,6 +87,26 @@ The following shows the structure of this folder. There are 3 subfolders:
 └── frontend
     └── gocity-product-management
 ```
+
+<br>
+
+## How to Run <a name="how-to-run"></a>
+Make sure Docker and Docker Compose are installed on your machine. 
+
+### Start the database
+1. `cd backend/gocity-database`
+2. `docker-compose build && docker-compose up -d`
+3. (Stop) `docker-compose.yml up -d`
+
+### Start the backend service
+1. `cd backend/gocity`
+2. `docker-compose build && docker-compose up -d`
+3. (Stop) `docker-compose.yml up -d`
+
+### Start the frontend portal
+1. `cd frontend/gocity-product-management`
+2. `docker-compose -f docker-compose-prod.yml build && docker-compose -f docker-compose-prod.yml up -d`
+3. (Stop) `docker-compose-prod.yml up -d`
 
 <br>
 
@@ -713,26 +749,6 @@ Delete a product entry in the database and returns the `id` of the deleted entry
 
   * **Code:** 500 INTERNAL SERVER ERROR <br />
     **Content:** `null`
-
-<br>
-
-## How to Run <a name="how-to-run"></a>
-Make sure Docker and Docker Compose are installed on your machine. 
-
-### Start the database
-1. `cd backend/gocity-database`
-2. `docker-compose build && docker-compose up -d`
-3. (Stop) `docker-compose.yml up -d`
-
-### Start the backend service
-1. `cd backend/gocity`
-2. `docker-compose build && docker-compose up -d`
-3. (Stop) `docker-compose.yml up -d`
-
-### Start the frontend portal
-1. `cd frontend/gocity-product-management`
-2. `docker-compose -f docker-compose-prod.yml build && docker-compose -f docker-compose-prod.yml up -d`
-3. (Stop) `docker-compose-prod.yml up -d`
 
 <br>
 
