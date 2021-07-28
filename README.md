@@ -10,6 +10,8 @@ Frontend: `http://127.0.0.1:3000`
 
 Backend: `http://127.0.0.1:8080/<endpoint>`
 
+Swagger UI: `http://127.0.0.1:8080/swagger-ui/`
+
 <br>
 
 ## Table of Contents
