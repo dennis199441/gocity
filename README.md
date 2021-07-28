@@ -23,9 +23,10 @@ Swagger UI: `http://127.0.0.1:8080/swagger-ui/`
 6. [System Architecture and Data Model](#system-architecture)
 7. [Frontend Portal File Structure](#frontend-portal)
 8. [Backend Service File Structure](#backend-service)
-9. [Category API](#category-api)
-10. [Product API](#product-api)
-11. [Future Development](#future-development)
+9. [Logging](#logging)
+10. [Category API](#category-api)
+11. [Product API](#product-api)
+12. [Future Development](#future-development)
 
 <br>
 
@@ -93,7 +94,7 @@ The following shows the structure of this folder. There are 3 subfolders:
 <br>
 
 ## How to Run <a name="how-to-run"></a>
-### Please make sure the followings before run the application:
+### Please make sure the followings before running the application:
 1. Docker and Docker Compose are installed on your machine.
 2. Port 3000, 3306 and 8080 are available on your machine.
 
@@ -249,6 +250,12 @@ src
                     ├── repository
                     └── service
 ```
+
+<br>
+
+## Logging <a name="logging"></a>
+I used SLF4J for logging. The log is store under `~/datadrive/gocity/backend/log`. The path can be updated by modifying the docker-compose file inside `backend/gocity`.
+
 
 <br>
 
